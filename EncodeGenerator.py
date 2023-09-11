@@ -4,14 +4,15 @@ import pickle
 import os
 import firebase_admin
 from firebase_admin import credentials
-from firebase_admin import db
+from firebase_admin import  db
 from firebase_admin import storage
 
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred,{
-    'databaseURL':"https://faceattendancerealtime-40981-default-rtdb.firebaseio.com/",
-    'storageBucket':"faceattendancerealtime-40981.appspot.com/"
+    'databaseURL':"https://faceattendancerealtime-c1b51-default-rtdb.firebaseio.com/",
+    'storageBucket':"faceattendancerealtime-c1b51.appspot.com"
 })
+
 #Importing student images
 imgBackground = cv2.imread('Resources/background.png')
 folderPath ='Images'
@@ -26,7 +27,7 @@ for path in PathList:
    
     studentIds.append(os.path.splitext(path)[0])
     
-    fileName = f'{folderPath}/{path}'
+    fileName= f'{folderPath}/{path}'
     bucket = storage.bucket()
     blob = bucket.blob(fileName)
     blob.upload_from_filename(fileName)
