@@ -80,10 +80,10 @@ while True:
             #Get the Data
             studentInfo =db.reference(f'Students/{id}').get()
             print(studentInfo)
-            #Get the Image from the storage
-            blob = bucket.get_blob(f'Images/{id}.png')
+
+            blob = bucket.get_blob(f'Images/{id}.jpg')
             array = np.frombuffer(blob.download_as_string(),np.uint8)
-            imgStudent = cv2.imdecode(array,cv2.COLOR_BGR2RGB)
+            imgStudent = cv2.imdecode(array,cv2.COLOR_BGRA2BGR)
 
         cv2.putText(imgBackground,str(studentInfo['total_attendance']),(861,125),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),1
                     )
