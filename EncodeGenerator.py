@@ -9,8 +9,8 @@ from firebase_admin import storage
 
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred,{
-    'databaseURL':"https://faceattendancerealtime-c1b51-default-rtdb.firebaseio.com/",
-    'storageBucket':"faceattendancerealtime-c1b51.appspot.com"
+    'databaseURL':"https://faceattendancev2-ac026-default-rtdb.firebaseio.com/",
+    'storageBucket':"faceattendancev2-ac026.appspot.com"
 })
 
 #Importing student images
@@ -36,7 +36,7 @@ for path in PathList:
 def findEncodings(imagesList):
     encodeList = []
     for img in imagesList:
-        img =cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         encode = face_recognition.face_encodings(img)[0]
         encodeList.append(encode)
     
