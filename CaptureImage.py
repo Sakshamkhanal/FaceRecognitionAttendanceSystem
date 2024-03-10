@@ -34,7 +34,7 @@ def capture_image():
     # Check if the frame is read correctly
     if ret:
         # Resize the frame
-        resized_frame = cv2.resize(frame)
+        resized_frame = cv2.resize(frame,(216,216))
 
         # Save the frame to a file
         filename = 'captured_image.jpg'

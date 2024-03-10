@@ -69,8 +69,10 @@ while True:
             if matches[matchIndex]:
                 y1, x2, y2, x1 = faceLoc
                 y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
-                bbox = (55 + x1, 162 + y1, x2 - x1, y2 - y1)
-                imgBackground = cvzone.cornerRect(imgBackground,bbox,rt=0)
+                print(y1, x2, y2, x1)
+                bbox = (y1, x2, y2, x1)
+               # imgBackground = cvzone.cornerRect(imgBackground,bbox,rt=0)
+                imgBackground = cv2.rectangle(imgBackground,(300,50),(300,50),(0,255,0),2)
                 id = StudentIds[matchIndex]
                 if counter ==0:
                     cvzone.putTextRect(imgBackground,"Loading",(250,400))

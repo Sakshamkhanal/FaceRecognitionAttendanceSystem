@@ -23,6 +23,26 @@ data ={
         "year":4,
         "last_attendance_time":"2022-12-11 00:54:34"
     },
+    "852741":
+    {
+        "name":"Srijan pokhrel",
+        "major":"CSIT",
+        "starting_year":2019,
+        "total_attendance":6,
+        "standing":"G",
+        "year":4,
+        "last_attendance_time":"2022-12-11 00:54:34"
+    },
+    "96385":
+        {
+            "name": "Kushal budathoki",
+            "major": "CSIT",
+            "starting_year": 2019,
+            "total_attendance": 6,
+            "standing": "G",
+            "year": 4,
+            "last_attendance_time": "2022-12-11 00:54:34"
+        },
 }
 
 for key,value in data.items():
